@@ -1,0 +1,313 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@font-face {
+    font-family: 'Argent CF';
+    src: url('fonts/ArgentCF-Regular.woff2') format('woff2'),
+         url('fonts/ArgentCF-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('https://img.freepik.com/premium-vector/modern-mental-health-concept-with-flat-design_23-2147884875.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: flex-start;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    z-index: -1;
+}
+
+.top-heading {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    color: #fff;
+    font-size: 2.5rem;
+    font-family: 'Argent CF', serif;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    cursor: default;
+    transition: 0.3s;
+}
+
+.top-heading:hover {
+    color: rgb(37, 107, 95);
+    transform: scale(1.05);
+    text-shadow: 2px 2px 12px rgba(37, 107, 95, 0.8);
+}
+
+.left-text-box {
+    position: absolute;
+    top: 50%;
+    left: 60px;
+    transform: translateY(-50%);
+    width: 380px;
+    background: rgba(255,255,255,0.85);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+}
+
+.left-text-box label {
+    font-family: 'Argent CF', serif;
+    color: rgb(37, 107, 95);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.left-text-box textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    font-size: 16px;
+    background: #f8f8f8;
+    outline: none;
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 30px 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    text-align: center;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="number"], input[type="range"], select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.range-value {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    margin-top: 2px;
+}
+
+button#predictBtn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #667eea;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button#predictBtn:hover {
+    background: #5a67d8;
+    box-shadow: 0 5px 15px rgba(102,126,234,0.3);
+}
+
+.result {
+    margin-top: 20px;
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+}
+
+.prompt-msg {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+    min-height: 20px;
+}
+
+.error-msg {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 3px;
+    display: block;
+
+    min-height: 18px;
+} */
+/* GENERAL RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+body {
+    display: flex;
+    height: 100vh;
+    background-color: #f0f2f5;
+}
+
+/* SIDEBAR STYLES */
+.sidebar {
+    width: 300px;
+    background: #ffffff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.input-group { margin-bottom: 15px; }
+.input-group label { display: block; font-size: 14px; color: #666; margin-bottom: 5px; }
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #f9f9f9;
+    font-size: 14px;
+}
+
+/* CHAT AREA STYLES */
+.chat-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+}
+
+.chat-header {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+}
+
+.badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    background: #ddd;
+    color: #555;
+}
+.badge.high-risk { background: #ffebee; color: #c62828; }
+.badge.low-risk { background: #e8f5e9; color: #2e7d32; }
+
+/* CHAT MESSAGES */
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #eef1f5;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    max-width: 70%;
+    padding: 15px;
+    border-radius: 15px;
+    line-height: 1.5;
+    font-size: 15px;
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.bot-message {
+    align-self: flex-start;
+    background: #ffffff;
+    color: #333;
+    border-bottom-left-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.user-message {
+    align-self: flex-end;
+    background: #4a90e2;
+    color: white;
+    border-bottom-right-radius: 2px;
+}
+
+/* INPUT AREA */
+.chat-input-area {
+    padding: 20px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex: 1;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    outline: none;
+}
+
+.chat-input-area button {
+    padding: 0 25px;
+    background: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.chat-input-area button:hover { background: #357abd; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

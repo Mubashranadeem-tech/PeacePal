@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindCare AI Agent</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-brain"></i> MindCare AI
+        </div>
+        
+        <form id="healthForm">
+            <h3><i class="fa-solid fa-heart-pulse"></i> Your Vitals</h3>
+            
+            <div class="input-group">
+                <label>Age Group</label>
+                <select id="age">
+                    <option value="20">18 - 25</option>
+                    <option value="30">26 - 35</option>
+                    <option value="40">36 - 45</option>
+                    <option value="50">46+</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Sleep Quality</label>
+                <select id="sleep">
+                    <option value="2">Poor (1-3 hrs)</option>
+                    <option value="5">Average (4-6 hrs)</option>
+                    <option value="8">Good (7-9 hrs)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Physical Activity</label>
+                <select id="physical">
+                    <option value="30">Low (Sedentary)</option>
+                    <option value="90">Moderate (Walking/Light)</option>
+                    <option value="150">High (Gym/Sports)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Daily Screen Time</label>
+                <select id="screen">
+                    <option value="2">Low (< 3 hours)</option>
+                    <option value="5">Moderate (3-6 hours)</option>
+                    <option value="9">High (7+ hours)</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Stress Level</label>
+                <select id="stress">
+                    <option value="1">Low Stress</option>
+                    <option value="2">Moderate Stress</option>
+                    <option value="3">High Stress</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Smoking Status</label>
+                <select id="smoking">
+                    <option value="No">Non-Smoker</option>
+                    <option value="Yes">Smoker</option>
+                </select>
+            </div>
+        </form>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>AI Mental Health Assistant</h2>
+            <span id="risk-badge" class="badge">Waiting for data...</span>
+        </div>
+
+        <div class="chat-box" id="chatBox">
+            <div class="message bot-message">
+                Hello! I am your AI Health Assistant. Please update your vitals on the left, then tell me how you are feeling below.
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <input type="text" id="userText" placeholder="Type here... (e.g., 'I feel anxious about my exams')">
+            <button onclick="handlePrediction()">
+                <i class="fa-solid fa-paper-plane"></i> Send
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
