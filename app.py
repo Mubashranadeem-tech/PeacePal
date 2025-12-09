@@ -29,7 +29,7 @@ def home():
 # CORS(app)
 
 # --- CONFIGURATION ---
-os.environ["GROQ_API_KEY"] = "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"
+
 client = Groq(api_key=os.environ.get("GROQ_API_KEY"))
 
 # Load Model
@@ -112,4 +112,5 @@ def predict():
     })
 
 if __name__ == '__main__':
+
     app.run(debug=True, port=5000)
