@@ -6,7 +6,7 @@ from groq import Groq
 
 # --- 1. CONFIGURATION ---
 # Set the API Key you provided
-os.environ["GROQ_API_KEY"] = "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"
+
 
 # Initialize Groq Client
 client = Groq(
@@ -161,4 +161,5 @@ def main():
         print("Invalid input. Please enter numbers where requested.")
 
 if __name__ == "__main__":
+
     main()
