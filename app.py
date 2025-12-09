@@ -9,7 +9,7 @@ from groq import Groq
 # Change: Tell Flask to look in the current folder for files
 app = Flask(__name__, static_url_path='', static_folder='.')
 CORS(app)
-
+os.environ["GROQ_API_KEY"] = "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"
 # ... (Keep your API KEY and Model loading code here) ...
 
 # NEW: Route to show your website
@@ -114,3 +114,4 @@ def predict():
 if __name__ == '__main__':
 
     app.run(debug=True, port=5000)
+
