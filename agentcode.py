@@ -6,6 +6,7 @@ from groq import Groq
 
 # --- 1. CONFIGURATION ---
 # Set the API Key you provided
+os.environ["GROQ_API_KEY"] = "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"
 
 
 # Initialize Groq Client
@@ -163,3 +164,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+
